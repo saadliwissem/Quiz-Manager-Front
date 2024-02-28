@@ -1,0 +1,60 @@
+<c-row ngPreserveWhitespaces>
+  <!--***-->
+
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Quiz</strong>
+      </c-card-header>
+
+      <c-card-body>
+        <p class="text-medium-emphasis small">
+          List of Quiz
+        </p>
+
+        <c-row [gutter]="{g: 4}" [md]="3" [xs]="1">
+          <c-col *ngFor="let quiz of quizzes">
+
+            <c-card>
+              <a href="" style="text-decoration: none;color: black;">
+                <img src="../../../../assets/images/Quiz.png" style="width: 60%; height: 60%;" alt="Image Description">
+                <c-card-body>
+                  <h5 cCardTitle>{{quiz.title}}</h5>
+                  <p cCardText>
+                    {{quiz.description}}.
+                  </p>
+                </c-card-body>
+              </a>
+      <c-card-footer class="d-flex justify-content-between ">
+        <button type="submit" class="btn btn-primary">Start </button>
+        <button (click)="modifyQuiz(quiz._id,quiz.title)"  class="btn btn-secondary">Modify </button>
+        <button (click)="deleteQuiz(quiz._id)" class="btn btn-danger">Delete </button>
+      </c-card-footer>
+    </c-card>
+
+  </c-col>
+</c-row>
+
+</c-card-body>
+</c-card>
+</c-col>
+</c-row>
+
+
+<ng-template #imgPlaceholderTemplate let-orientation>
+  <svg [cCardImg]="orientation ?? 'top'" aria-label="Placeholder: Image cap" class="docs-placeholder-img"
+    focusable="false" height="180" preserveAspectRatio="xMidYMid slice" role="img" width="100%"
+    xmlns="http://www.w3.org/2000/svg">
+    <title>Placeholder</title>
+    <rect fill="#868e96" height="100%" width="100%"></rect>
+    <text dominant-baseline="middle" dy=".3em" fill="#dee2e6" text-anchor="middle" x="50%" y="50%">Image cap</text>
+  </svg>
+</ng-template>
+
+<ng-template #cardBodyTemplate>
+  <h5 cCardTitle>Card title</h5>
+  <p cCardText>
+    Some quick example text to build on the card title and make up the bulk of the card's content.
+  </p>
+  <button cButton color="primary">Go somewhere</button>
+</ng-template>

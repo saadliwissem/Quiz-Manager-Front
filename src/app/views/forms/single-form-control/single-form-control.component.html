@@ -1,0 +1,27 @@
+<div class="mb-3" >
+    <label cLabel for="exampleFormControlInput1">question</label>
+    <input name="title" cFormControl id="exampleFormControlInput1" placeholder="question content"
+      type="email" />
+  </div>
+  <div class="mb-3">
+    <label cLabel for="exampleFormControlInput1">add a new question</label>
+    <div class="d-flex flex-row">
+
+      <input name="title"  cFormControl id="exampleFormControlInput1" placeholder="question content"
+        type="email" />
+      <button  class="btn btn-primary " style="margin-left: 10px;">submit </button>
+
+      <button  class="btn btn-danger " style="margin-left: 10px;">-</button>
+    </div>
+    <div >
+      <c-form-check>
+        <input cFormCheckInput  id="checkOne" type="checkbox" />
+        <label cFormCheckLabel for="checkOne">Default checkbox</label>
+      </c-form-check>
+      <c-form-check>
+        <input [checked]="true" cFormCheckInput  id="checkTwo" type="checkbox" />
+        <label cFormCheckLabel for="checkTwo">Checked checkbox</label>
+      </c-form-check>
+    </div>
+  </div>
+  

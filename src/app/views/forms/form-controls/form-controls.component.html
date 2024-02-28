@@ -1,0 +1,26 @@
+<c-row ngPreserveWhitespaces>
+
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Add new Quiz</strong>
+      </c-card-header>
+      <c-card-body>
+
+        <form (ngSubmit)="createQuiz()" cForm>
+          <div class="mb-3">
+            <label cLabel for="exampleFormControlInput1">Quiz Title</label>
+            <input [(ngModel)]="title" name="title" cFormControl id="exampleFormControlInput1" placeholder="title" type="email" />
+          </div>
+          <div class="mb-3">
+            <label cLabel for="exampleFormControlTextarea1">description</label>
+            <textarea [(ngModel)]="description" name="description" cFormControl id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Add</button>
+
+        </form>
+
+      </c-card-body>
+    </c-card>
+  </c-col>
+</c-row>

@@ -1,0 +1,22 @@
+<c-row ngPreserveWhitespaces>
+
+  <form [formGroup]="formGroup" cForm>
+    <c-col xs="12">
+      <c-card class="mb-4">
+        <c-card-header>
+          <strong>{{QuizName}}</strong>
+        </c-card-header>
+        <c-card-body *ngFor="let question of Questions">
+          <app-single-form-control> </app-single-form-control>
+        </c-card-body>
+        <c-card-footer>
+          <div class="d-flex justify-content-end">
+
+            <button (click)="addNewQestion()" class="btn btn-primary ">+</button>
+          </div>
+        </c-card-footer>
+      </c-card>
+    </c-col>
+
+  </form>
+</c-row>
