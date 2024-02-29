@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -8,24 +9,29 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent {
   
-  email : string="";
-  password : string="";
+  email: string = "";
+  password: string = "";
+  errorMessage: string = "";
+
+  constructor(private authService: AuthService, private router: Router) { }
   
-  constructor(private authService: AuthService) { }
   login(): void {
     this.authService.login(this.email, this.password)
       .subscribe(
         response => {
           // Handle successful login
           console.log(response);
-          // For example, you can store the token in local storage
+          // Store the token in local storage
           localStorage.setItem('token', response.token);
+          // Navigate to the dashboard upon successful login
+          this.router.navigate(['/dashboard']);
         },
         error => {
           // Handle login error
           console.error(error);
+          // Display error message
+          this.errorMessage = error.error.error;
         }
       );
   }
-
 }

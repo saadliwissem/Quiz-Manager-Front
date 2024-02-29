@@ -26,6 +26,7 @@
                     [(ngModel)]="password" name="password"
                   />
                 </c-input-group>
+              <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
                 <c-row>
                   <c-col xs="6">
                     <button type="submit" cButton class="px-4" color="primary">
