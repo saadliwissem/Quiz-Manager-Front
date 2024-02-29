@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <h2>{{ quiz.title }}</h2>
+        <p>{{ quiz.description }}</p>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col">
+        <div *ngFor="let question of quiz.questions" class="mt-4">
+          <h4>{{ question.text }}</h4>
+          <div class="form-check" *ngFor="let option of question.options">
+            <input class="form-check-input" type="checkbox" [id]="option._id">
+            <label class="form-check-label" [for]="option._id">{{ option.text }}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

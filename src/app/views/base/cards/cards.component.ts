@@ -38,5 +38,8 @@ export class CardsComponent {
   modifyQuiz(id: string,name:string): void {
     this.router.navigate(["/forms/checks-radios"], { queryParams: { id: id ,name:name} })
   }
+  startQuiz(id: string,name:string): void {
+    this.router.navigate(["/base/passquiz"], { queryParams: { id: id ,name:name} })
+  }
 
 }

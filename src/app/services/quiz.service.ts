@@ -37,4 +37,7 @@ export class QuizService {
     const body = { text, quizId };
     return this.http.post<any>(`${this.apiUrl}/question`, body);
   }
+  getQuizById(id: string|null): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/quiz/${id}`);
+  }
 }

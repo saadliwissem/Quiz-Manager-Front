@@ -16,6 +16,7 @@ import { TablesComponent } from './tables/tables.component';
 import { TooltipsComponent } from './tooltips/tooltips.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { PlaceholdersComponent } from './placeholders/placeholders.component';
+import {PassQuizComponent} from "./pass-quiz/pass-quiz.component"
 
 const routes: Routes = [
   {
@@ -48,6 +49,13 @@ const routes: Routes = [
         component: CardsComponent,
         data: {
           title: 'Cards',
+        },
+      },
+      {
+        path: 'passquiz',
+        component: PassQuizComponent,
+        data: {
+          title: 'pass Quiz',
         },
       },
       {
